@@ -3,10 +3,11 @@ public class optimizedpower{
         if(n==0){
             return 1;
         }
+        int halfpower=optimizedpoweer(x,n/2);
         if(n%2==0){
-            return optimizedpoweer(x,n/2)*optimizedpoweer(x,n/2);
+            return halfpower*halfpower;
         }else{
-            return x*optimizedpoweer(x,n/2)*optimizedpoweer(x,n/2);
+            return x*halfpower*halfpower;
         }
     }
     public static void main(String[] args) {
