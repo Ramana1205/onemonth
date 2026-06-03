@@ -24,7 +24,7 @@ public class rotatedsortedarray {
     }
     public static void main(String[] args) {
         int []arr={6,7,9,1,2,3,4,5};
-        int idx = search(arr,0,arr.length-1,9);
+        int idx = search(arr,0,arr.length-1,22);
         System.out.println(idx);
         
     }
