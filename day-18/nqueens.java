@@ -6,11 +6,7 @@ public class nqueens {
                 return false;
             }
         }
-        for(int i=col-1;i>=0;i--){
-            if(arr[row][i].equals("Q")){
-                return false;
-            }
-        }
+        
         for(int i=row-1,j=col-1;i>=0&&j>=0;i--,j--){
             if(arr[i][j].equals("Q")){
                 return false;
@@ -25,7 +21,7 @@ public class nqueens {
         }
         return true;
     }
-    public static void nqueens(String[][] arr,int n,int row){
+    public static boolean nqueens(String[][] arr,int n,int row){
         if(row==n){
             count++;
             System.out.println("_________CHESS BOARD__________");
@@ -35,20 +31,23 @@ public class nqueens {
             }
             System.out.println();
         }
-            return;
+            return true;
         }
         for(int i=0;i<n;i++){
             if(issafe(arr,row,i,n)){
                 arr[row][i]="Q";
-            nqueens(arr,n,row+1);
+            if(nqueens(arr,n,row+1)){
+               return true;
+            }
             arr[row][i]="X";
             }
         }
+        return false;
 
     }
     static int count=0;
     public static void main(String[] args) {
-        int n=4;
+        int n=10;
         String s[][]=new String[n][n];
         for(int i=0;i<n;i++){
             for(int j=0;j<n;j++){
