@@ -6,7 +6,7 @@ public class subset {
                 System.out.println("null");
                 return;
             }
-            System.out.println(res);
+            System.out.print(res+" ");
             return;
         }
         subsets(s,res+s.charAt(i),i+1);
@@ -14,7 +14,7 @@ public class subset {
 
     }
     public static void main(String[] args) {
-        String s="abc";
+        String s="abcd";
         
         String result="";
         subsets(s,result,0);
